@@ -6,9 +6,9 @@ This is a very simple CLI that turns .png files into grayscale images by adding 
 ````shell
 ./grayscaler <img.png>
 ````
-2. Input: \
+2. Input: 
 <img src="assets/ferrari.pnng.PNG" width=128>
-3. Output: \
+3. Output: 
 <img src="assets/gray-ferrari.pnng.PNG" width=128>
 
 ## Implementation
