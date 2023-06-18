@@ -32,7 +32,8 @@ int main(int argc, char* argv[]){
             u8 b = file[index + 2];
             u8 a = file[index + 3];
 
-            u8 endVal = (r + g + b) / 3; //=> < 255
+            //cal grayscale value of RGB
+            u8 endVal = (r + g + b) / 3;
 
             endFile[index] = endVal;
             endFile[index + 1] = endVal;
@@ -40,12 +41,13 @@ int main(int argc, char* argv[]){
             endFile[index + 3] = a;
         }
     }
-    char new_filename[MAXLEN]; // Make sure the array is large enough to hold the original filename plus the "gray-" prefix and the null-terminating character.
+    char new_filename[MAXLEN];
     if(strlen(argv[1]) > MAXLEN){
         printf("filename to big \n");
         return -1;
     }
     sprintf(new_filename, "gray-%s", argv[1]);
+    //writing the image data into a separate file
     stbi_write_png(new_filename, w, h, CHANNEL_NUM, endFile, w * CHANNEL_NUM);
 
     free(file);
